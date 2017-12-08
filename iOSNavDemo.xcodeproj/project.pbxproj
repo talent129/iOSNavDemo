@@ -1,0 +1,727 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5F64C0771FD14E3B009F4B08 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F64C0761FD14E3B009F4B08 /* AppDelegate.m */; };
+		5F64C07F1FD14E3B009F4B08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F64C07E1FD14E3B009F4B08 /* Assets.xcassets */; };
+		5F64C0851FD14E3B009F4B08 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F64C0841FD14E3B009F4B08 /* main.m */; };
+		5FFA9FB51FD4E9BB005C9D7B /* UIColor+hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFA9FB41FD4E9BB005C9D7B /* UIColor+hex.m */; };
+		5FFA9FC81FD4EA4E005C9D7B /* BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFA9FC71FD4EA4E005C9D7B /* BaseController.m */; };
+		5FFA9FCB1FD4EAC5005C9D7B /* BaseNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFA9FCA1FD4EAC5005C9D7B /* BaseNavController.m */; };
+		5FFA9FCE1FD4EB0B005C9D7B /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFA9FCD1FD4EB0B005C9D7B /* BaseTabBarController.m */; };
+		5FFA9FD11FD4EB18005C9D7B /* FirstController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFA9FD01FD4EB18005C9D7B /* FirstController.m */; };
+		5FFA9FD41FD4EB35005C9D7B /* SecondController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFA9FD31FD4EB35005C9D7B /* SecondController.m */; };
+		5FFA9FD71FD4EB49005C9D7B /* ThirdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFA9FD61FD4EB49005C9D7B /* ThirdController.m */; };
+		5FFA9FDE1FD4ED70005C9D7B /* FourthController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFA9FDD1FD4ED70005C9D7B /* FourthController.m */; };
+		5FFA9FE91FD4F949005C9D7B /* FFirstController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFA9FE81FD4F949005C9D7B /* FFirstController.m */; };
+		5FFA9FEC1FD4F95F005C9D7B /* FSecondController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFA9FEB1FD4F95F005C9D7B /* FSecondController.m */; };
+		5FFA9FEE1FD4FB9F005C9D7B /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FFA9FED1FD4FB9F005C9D7B /* Launch Screen.storyboard */; };
+		5FFA9FFE1FD5486E005C9D7B /* FTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFA9FFD1FD5486E005C9D7B /* FTestController.m */; };
+		5FFAA0051FD54E02005C9D7B /* UIImage+ColorCreateImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFAA0041FD54E02005C9D7B /* UIImage+ColorCreateImage.m */; };
+		69A7927A3F05E80157D6DEE2 /* libPods-iOSNavDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6067E8BC7A75F9D48F4FA0EB /* libPods-iOSNavDemo.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		50436661A36EBA7458863AF6 /* Pods-iOSNavDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSNavDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSNavDemo/Pods-iOSNavDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		5F64C0721FD14E3B009F4B08 /* iOSNavDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSNavDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F64C0751FD14E3B009F4B08 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5F64C0761FD14E3B009F4B08 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5F64C07E1FD14E3B009F4B08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5F64C0831FD14E3B009F4B08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F64C0841FD14E3B009F4B08 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5FFA9FB31FD4E9BB005C9D7B /* UIColor+hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+hex.h"; sourceTree = "<group>"; };
+		5FFA9FB41FD4E9BB005C9D7B /* UIColor+hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+hex.m"; sourceTree = "<group>"; };
+		5FFA9FC21FD4EA28005C9D7B /* Const.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Const.h; sourceTree = "<group>"; };
+		5FFA9FC31FD4EA28005C9D7B /* PublicDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicDefine.h; sourceTree = "<group>"; };
+		5FFA9FC41FD4EA28005C9D7B /* GlobalConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalConfiguration.h; sourceTree = "<group>"; };
+		5FFA9FC51FD4EA28005C9D7B /* InterfaceDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceDefine.h; sourceTree = "<group>"; };
+		5FFA9FC61FD4EA4E005C9D7B /* BaseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseController.h; sourceTree = "<group>"; };
+		5FFA9FC71FD4EA4E005C9D7B /* BaseController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseController.m; sourceTree = "<group>"; };
+		5FFA9FC91FD4EAC5005C9D7B /* BaseNavController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNavController.h; sourceTree = "<group>"; };
+		5FFA9FCA1FD4EAC5005C9D7B /* BaseNavController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNavController.m; sourceTree = "<group>"; };
+		5FFA9FCC1FD4EB0B005C9D7B /* BaseTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTabBarController.h; sourceTree = "<group>"; };
+		5FFA9FCD1FD4EB0B005C9D7B /* BaseTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarController.m; sourceTree = "<group>"; };
+		5FFA9FCF1FD4EB18005C9D7B /* FirstController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstController.h; sourceTree = "<group>"; };
+		5FFA9FD01FD4EB18005C9D7B /* FirstController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstController.m; sourceTree = "<group>"; };
+		5FFA9FD21FD4EB35005C9D7B /* SecondController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondController.h; sourceTree = "<group>"; };
+		5FFA9FD31FD4EB35005C9D7B /* SecondController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondController.m; sourceTree = "<group>"; };
+		5FFA9FD51FD4EB49005C9D7B /* ThirdController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdController.h; sourceTree = "<group>"; };
+		5FFA9FD61FD4EB49005C9D7B /* ThirdController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdController.m; sourceTree = "<group>"; };
+		5FFA9FDC1FD4ED70005C9D7B /* FourthController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FourthController.h; sourceTree = "<group>"; };
+		5FFA9FDD1FD4ED70005C9D7B /* FourthController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FourthController.m; sourceTree = "<group>"; };
+		5FFA9FE71FD4F949005C9D7B /* FFirstController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFirstController.h; sourceTree = "<group>"; };
+		5FFA9FE81FD4F949005C9D7B /* FFirstController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFirstController.m; sourceTree = "<group>"; };
+		5FFA9FEA1FD4F95F005C9D7B /* FSecondController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSecondController.h; sourceTree = "<group>"; };
+		5FFA9FEB1FD4F95F005C9D7B /* FSecondController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSecondController.m; sourceTree = "<group>"; };
+		5FFA9FED1FD4FB9F005C9D7B /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		5FFA9FFC1FD5486E005C9D7B /* FTestController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTestController.h; sourceTree = "<group>"; };
+		5FFA9FFD1FD5486E005C9D7B /* FTestController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FTestController.m; sourceTree = "<group>"; };
+		5FFAA0031FD54E02005C9D7B /* UIImage+ColorCreateImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+ColorCreateImage.h"; sourceTree = "<group>"; };
+		5FFAA0041FD54E02005C9D7B /* UIImage+ColorCreateImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ColorCreateImage.m"; sourceTree = "<group>"; };
+		6067E8BC7A75F9D48F4FA0EB /* libPods-iOSNavDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSNavDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D58506A4CBEF3BAE18C2BEC8 /* Pods-iOSNavDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSNavDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSNavDemo/Pods-iOSNavDemo.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5F64C06F1FD14E3B009F4B08 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69A7927A3F05E80157D6DEE2 /* libPods-iOSNavDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5F64C0691FD14E3B009F4B08 = {
+			isa = PBXGroup;
+			children = (
+				5F64C0741FD14E3B009F4B08 /* iOSNavDemo */,
+				5F64C0731FD14E3B009F4B08 /* Products */,
+				B03DD34E0EE37504226EB30D /* Pods */,
+				E94E8EE225EA10B805DCBD3B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5F64C0731FD14E3B009F4B08 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5F64C0721FD14E3B009F4B08 /* iOSNavDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5F64C0741FD14E3B009F4B08 /* iOSNavDemo */ = {
+			isa = PBXGroup;
+			children = (
+				5FFA9FA81FD4E855005C9D7B /* BaseFrame */,
+				5FFA9FA91FD4E855005C9D7B /* Modules */,
+				5FFA9FAA1FD4E866005C9D7B /* Supporting Files */,
+				5F64C0751FD14E3B009F4B08 /* AppDelegate.h */,
+				5F64C0761FD14E3B009F4B08 /* AppDelegate.m */,
+			);
+			path = iOSNavDemo;
+			sourceTree = "<group>";
+		};
+		5FFA9FA81FD4E855005C9D7B /* BaseFrame */ = {
+			isa = PBXGroup;
+			children = (
+				5FFAA0071FD69407005C9D7B /* BaseNetwork */,
+				5FFA9FB11FD4E9A0005C9D7B /* Category */,
+				5FFA9FAC1FD4E8A6005C9D7B /* BaseClass */,
+				5FFA9FAB1FD4E893005C9D7B /* Config */,
+			);
+			path = BaseFrame;
+			sourceTree = "<group>";
+		};
+		5FFA9FA91FD4E855005C9D7B /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				5FFA9FBE1FD4EA02005C9D7B /* First */,
+				5FFA9FB61FD4EA02005C9D7B /* Second */,
+				5FFA9FBA1FD4EA02005C9D7B /* Third */,
+				5FFA9FD81FD4ED5E005C9D7B /* Fourth */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		5FFA9FAA1FD4E866005C9D7B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5F64C07E1FD14E3B009F4B08 /* Assets.xcassets */,
+				5F64C0831FD14E3B009F4B08 /* Info.plist */,
+				5F64C0841FD14E3B009F4B08 /* main.m */,
+				5FFA9FED1FD4FB9F005C9D7B /* Launch Screen.storyboard */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5FFA9FAB1FD4E893005C9D7B /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				5FFA9FC21FD4EA28005C9D7B /* Const.h */,
+				5FFA9FC41FD4EA28005C9D7B /* GlobalConfiguration.h */,
+				5FFA9FC51FD4EA28005C9D7B /* InterfaceDefine.h */,
+				5FFA9FC31FD4EA28005C9D7B /* PublicDefine.h */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		5FFA9FAC1FD4E8A6005C9D7B /* BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				5FFA9FC61FD4EA4E005C9D7B /* BaseController.h */,
+				5FFA9FC71FD4EA4E005C9D7B /* BaseController.m */,
+				5FFA9FC91FD4EAC5005C9D7B /* BaseNavController.h */,
+				5FFA9FCA1FD4EAC5005C9D7B /* BaseNavController.m */,
+				5FFA9FCC1FD4EB0B005C9D7B /* BaseTabBarController.h */,
+				5FFA9FCD1FD4EB0B005C9D7B /* BaseTabBarController.m */,
+			);
+			path = BaseClass;
+			sourceTree = "<group>";
+		};
+		5FFA9FB11FD4E9A0005C9D7B /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				5FFAA0021FD54DD8005C9D7B /* UIImage */,
+				5FFA9FB21FD4E9A5005C9D7B /* UIColor */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		5FFA9FB21FD4E9A5005C9D7B /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				5FFA9FB31FD4E9BB005C9D7B /* UIColor+hex.h */,
+				5FFA9FB41FD4E9BB005C9D7B /* UIColor+hex.m */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		5FFA9FB61FD4EA02005C9D7B /* Second */ = {
+			isa = PBXGroup;
+			children = (
+				5FFA9FB71FD4EA02005C9D7B /* Controller */,
+				5FFA9FB81FD4EA02005C9D7B /* Model */,
+				5FFA9FB91FD4EA02005C9D7B /* View */,
+			);
+			path = Second;
+			sourceTree = "<group>";
+		};
+		5FFA9FB71FD4EA02005C9D7B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5FFA9FD21FD4EB35005C9D7B /* SecondController.h */,
+				5FFA9FD31FD4EB35005C9D7B /* SecondController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5FFA9FB81FD4EA02005C9D7B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5FFA9FB91FD4EA02005C9D7B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5FFA9FBA1FD4EA02005C9D7B /* Third */ = {
+			isa = PBXGroup;
+			children = (
+				5FFA9FBB1FD4EA02005C9D7B /* Controller */,
+				5FFA9FBC1FD4EA02005C9D7B /* Model */,
+				5FFA9FBD1FD4EA02005C9D7B /* View */,
+			);
+			path = Third;
+			sourceTree = "<group>";
+		};
+		5FFA9FBB1FD4EA02005C9D7B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5FFA9FD51FD4EB49005C9D7B /* ThirdController.h */,
+				5FFA9FD61FD4EB49005C9D7B /* ThirdController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5FFA9FBC1FD4EA02005C9D7B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5FFA9FBD1FD4EA02005C9D7B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5FFA9FBE1FD4EA02005C9D7B /* First */ = {
+			isa = PBXGroup;
+			children = (
+				5FFA9FBF1FD4EA02005C9D7B /* Controller */,
+				5FFA9FC01FD4EA02005C9D7B /* Model */,
+				5FFA9FC11FD4EA02005C9D7B /* View */,
+			);
+			path = First;
+			sourceTree = "<group>";
+		};
+		5FFA9FBF1FD4EA02005C9D7B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5FFA9FCF1FD4EB18005C9D7B /* FirstController.h */,
+				5FFA9FD01FD4EB18005C9D7B /* FirstController.m */,
+				5FFA9FFC1FD5486E005C9D7B /* FTestController.h */,
+				5FFA9FFD1FD5486E005C9D7B /* FTestController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5FFA9FC01FD4EA02005C9D7B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5FFA9FC11FD4EA02005C9D7B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5FFA9FD81FD4ED5E005C9D7B /* Fourth */ = {
+			isa = PBXGroup;
+			children = (
+				5FFA9FE31FD4F8F2005C9D7B /* FFirst */,
+				5FFA9FDF1FD4F8F2005C9D7B /* FSecond */,
+				5FFA9FD91FD4ED5E005C9D7B /* Controller */,
+				5FFA9FDA1FD4ED5E005C9D7B /* Model */,
+				5FFA9FDB1FD4ED5E005C9D7B /* View */,
+			);
+			path = Fourth;
+			sourceTree = "<group>";
+		};
+		5FFA9FD91FD4ED5E005C9D7B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5FFA9FDC1FD4ED70005C9D7B /* FourthController.h */,
+				5FFA9FDD1FD4ED70005C9D7B /* FourthController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5FFA9FDA1FD4ED5E005C9D7B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5FFA9FDB1FD4ED5E005C9D7B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5FFA9FDF1FD4F8F2005C9D7B /* FSecond */ = {
+			isa = PBXGroup;
+			children = (
+				5FFA9FE01FD4F8F2005C9D7B /* Controller */,
+				5FFA9FE11FD4F8F2005C9D7B /* Model */,
+				5FFA9FE21FD4F8F2005C9D7B /* View */,
+			);
+			path = FSecond;
+			sourceTree = "<group>";
+		};
+		5FFA9FE01FD4F8F2005C9D7B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5FFA9FEA1FD4F95F005C9D7B /* FSecondController.h */,
+				5FFA9FEB1FD4F95F005C9D7B /* FSecondController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5FFA9FE11FD4F8F2005C9D7B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5FFA9FE21FD4F8F2005C9D7B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5FFA9FE31FD4F8F2005C9D7B /* FFirst */ = {
+			isa = PBXGroup;
+			children = (
+				5FFA9FE41FD4F8F2005C9D7B /* Controller */,
+				5FFA9FE51FD4F8F2005C9D7B /* Model */,
+				5FFA9FE61FD4F8F2005C9D7B /* View */,
+			);
+			path = FFirst;
+			sourceTree = "<group>";
+		};
+		5FFA9FE41FD4F8F2005C9D7B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5FFA9FE71FD4F949005C9D7B /* FFirstController.h */,
+				5FFA9FE81FD4F949005C9D7B /* FFirstController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5FFA9FE51FD4F8F2005C9D7B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5FFA9FE61FD4F8F2005C9D7B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5FFAA0021FD54DD8005C9D7B /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				5FFAA0031FD54E02005C9D7B /* UIImage+ColorCreateImage.h */,
+				5FFAA0041FD54E02005C9D7B /* UIImage+ColorCreateImage.m */,
+			);
+			path = UIImage;
+			sourceTree = "<group>";
+		};
+		5FFAA0071FD69407005C9D7B /* BaseNetwork */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BaseNetwork;
+			sourceTree = "<group>";
+		};
+		B03DD34E0EE37504226EB30D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				50436661A36EBA7458863AF6 /* Pods-iOSNavDemo.debug.xcconfig */,
+				D58506A4CBEF3BAE18C2BEC8 /* Pods-iOSNavDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E94E8EE225EA10B805DCBD3B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6067E8BC7A75F9D48F4FA0EB /* libPods-iOSNavDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5F64C0711FD14E3B009F4B08 /* iOSNavDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F64C0881FD14E3B009F4B08 /* Build configuration list for PBXNativeTarget "iOSNavDemo" */;
+			buildPhases = (
+				E5C4DED800A7B88348328FF3 /* [CP] Check Pods Manifest.lock */,
+				5F64C06E1FD14E3B009F4B08 /* Sources */,
+				5F64C06F1FD14E3B009F4B08 /* Frameworks */,
+				5F64C0701FD14E3B009F4B08 /* Resources */,
+				CA28615357F1281422BD3C15 /* [CP] Embed Pods Frameworks */,
+				4BD0995C3E19E5EC027F1DD2 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iOSNavDemo;
+			productName = iOSNavDemo;
+			productReference = 5F64C0721FD14E3B009F4B08 /* iOSNavDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5F64C06A1FD14E3B009F4B08 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = "";
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = Curtis;
+				TargetAttributes = {
+					5F64C0711FD14E3B009F4B08 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 5F64C06D1FD14E3B009F4B08 /* Build configuration list for PBXProject "iOSNavDemo" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5F64C0691FD14E3B009F4B08;
+			productRefGroup = 5F64C0731FD14E3B009F4B08 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5F64C0711FD14E3B009F4B08 /* iOSNavDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5F64C0701FD14E3B009F4B08 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FFA9FEE1FD4FB9F005C9D7B /* Launch Screen.storyboard in Resources */,
+				5F64C07F1FD14E3B009F4B08 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4BD0995C3E19E5EC027F1DD2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOSNavDemo/Pods-iOSNavDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA28615357F1281422BD3C15 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOSNavDemo/Pods-iOSNavDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5C4DED800A7B88348328FF3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOSNavDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5F64C06E1FD14E3B009F4B08 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F64C0851FD14E3B009F4B08 /* main.m in Sources */,
+				5FFA9FE91FD4F949005C9D7B /* FFirstController.m in Sources */,
+				5FFA9FD71FD4EB49005C9D7B /* ThirdController.m in Sources */,
+				5FFA9FCB1FD4EAC5005C9D7B /* BaseNavController.m in Sources */,
+				5FFA9FB51FD4E9BB005C9D7B /* UIColor+hex.m in Sources */,
+				5FFA9FD11FD4EB18005C9D7B /* FirstController.m in Sources */,
+				5FFAA0051FD54E02005C9D7B /* UIImage+ColorCreateImage.m in Sources */,
+				5FFA9FC81FD4EA4E005C9D7B /* BaseController.m in Sources */,
+				5FFA9FFE1FD5486E005C9D7B /* FTestController.m in Sources */,
+				5FFA9FD41FD4EB35005C9D7B /* SecondController.m in Sources */,
+				5FFA9FEC1FD4F95F005C9D7B /* FSecondController.m in Sources */,
+				5FFA9FDE1FD4ED70005C9D7B /* FourthController.m in Sources */,
+				5FFA9FCE1FD4EB0B005C9D7B /* BaseTabBarController.m in Sources */,
+				5F64C0771FD14E3B009F4B08 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		5F64C0861FD14E3B009F4B08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5F64C0871FD14E3B009F4B08 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5F64C0891FD14E3B009F4B08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50436661A36EBA7458863AF6 /* Pods-iOSNavDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7GSW2BF5U4;
+				INFOPLIST_FILE = iOSNavDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Curtis.iOSNavDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		5F64C08A1FD14E3B009F4B08 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D58506A4CBEF3BAE18C2BEC8 /* Pods-iOSNavDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7GSW2BF5U4;
+				INFOPLIST_FILE = iOSNavDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Curtis.iOSNavDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5F64C06D1FD14E3B009F4B08 /* Build configuration list for PBXProject "iOSNavDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F64C0861FD14E3B009F4B08 /* Debug */,
+				5F64C0871FD14E3B009F4B08 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5F64C0881FD14E3B009F4B08 /* Build configuration list for PBXNativeTarget "iOSNavDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F64C0891FD14E3B009F4B08 /* Debug */,
+				5F64C08A1FD14E3B009F4B08 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5F64C06A1FD14E3B009F4B08 /* Project object */;
+}
