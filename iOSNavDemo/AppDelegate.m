@@ -25,8 +25,9 @@
     
     self.window = [[UIWindow alloc] initWithFrame:BOUNDS];
     
-    self.window.backgroundColor = kNavBarColor;
-//    self.window.backgroundColor = [UIColor colorWithPatternImage:IMAGE(@"navPic_snow")];
+    self.window.backgroundColor = kVCViewColor;//控制器背景颜色
+//    self.window.backgroundColor = kNavBarColor;//导航栏颜色
+//    self.window.backgroundColor = [UIColor colorWithPatternImage:IMAGE(@"navPic_snow")];//导航
     BaseTabBarController *tab = [[BaseTabBarController alloc] init];
     self.window.rootViewController = tab;
     [self.window makeKeyAndVisible];

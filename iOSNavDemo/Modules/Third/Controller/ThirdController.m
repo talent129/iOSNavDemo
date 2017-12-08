@@ -26,7 +26,6 @@
         _tableView.dataSource = self;
         _tableView.estimatedRowHeight = 100;
         _tableView.rowHeight = UITableViewAutomaticDimension;
-        
     }
     return _tableView;
 }

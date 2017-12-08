@@ -23,15 +23,18 @@
 #define SCREEN_Width    ([UIScreen mainScreen].bounds.size.width)
 #define SCREEN_Height   ([UIScreen mainScreen].bounds.size.height)
 
-//状态栏高度
-#define StatusBarHeight [[UIApplication sharedApplication] statusBarFrame].size.height
-
 /* 区分屏幕 */
 #define IPHONE4 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
 #define IPHONE5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
 #define IPHONE6 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) : NO)
 #define IPHONE6Plus ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size) : NO)
 #define IPHONEX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+
+//状态栏高度
+#define StatusBarHeight [[UIApplication sharedApplication] statusBarFrame].size.height
+
+//导航栏高度
+#define kNavBarHeight (StatusBarHeight + 44)
 
 /* 显示打印行 */
 #if DEBUG

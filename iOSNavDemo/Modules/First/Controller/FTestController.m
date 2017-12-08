@@ -32,7 +32,7 @@
 {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-        _tableView.backgroundColor = COLOR(@"#efefef");
+        _tableView.backgroundColor = kVCViewColor;
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.estimatedRowHeight = 100;
@@ -93,6 +93,7 @@
     self.statusStyle = UIStatusBarStyleLightContent;
     
     self.contentOffSet_Y = 0;
+    
 }
 
 #pragma mark -setupUI
@@ -101,7 +102,7 @@
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.and.trailing.equalTo(@0);
-        make.top.equalTo(self.mas_topLayoutGuideBottom).mas_offset(-64);
+        make.top.equalTo(self.mas_topLayoutGuideBottom).mas_offset(-kNavBarHeight);
         make.bottom.equalTo(self.mas_bottomLayoutGuideTop);
     }];
     

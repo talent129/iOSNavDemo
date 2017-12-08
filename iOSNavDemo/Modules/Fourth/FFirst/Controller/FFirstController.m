@@ -35,6 +35,7 @@
 {
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.barTintColor = [UIColor purpleColor];
+    [UIApplication sharedApplication].keyWindow.backgroundColor = kVCViewColor;
     
     self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
 }
@@ -42,7 +43,9 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    //    self.navigationController.navigationBar.barTintColor = [UIColor orangeColor];
+    
+//    //恢复
+//    self.navigationController.navigationBar.barTintColor = [UIColor orangeColor];
     
 }
 

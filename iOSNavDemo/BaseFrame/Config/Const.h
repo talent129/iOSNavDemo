@@ -18,5 +18,8 @@
  */
 #define kNavBarColor [UIColor orangeColor]
 
+///控制器view颜色
+#define kVCViewColor COLOR(@"#efefef")
+
 
 #endif /* Const_h */

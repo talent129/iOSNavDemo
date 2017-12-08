@@ -80,7 +80,6 @@
     // Do any additional setup after loading the view.
     
     [self createUI];
-    
     for (id obj in self.navigationController.navigationBar.subviews) {
         NSLog(@"---%@", obj);
     }
@@ -98,7 +97,7 @@
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.and.trailing.equalTo(@0);
-        make.top.equalTo(self.mas_topLayoutGuideBottom).mas_offset(-64);
+        make.top.equalTo(self.mas_topLayoutGuideBottom).mas_offset(-kNavBarHeight);
         make.bottom.equalTo(self.mas_bottomLayoutGuideTop);
     }];
 }
