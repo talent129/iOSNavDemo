@@ -13,14 +13,10 @@
 @interface FTestController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) UIImageView *navBarBackground;
-
 
 /**
- 标记当前页面 导航栏透明度、状态栏风格
+ 标记当前页面滑动偏移量
  */
-@property (nonatomic, assign) CGFloat currentAlpha;
-@property (nonatomic, assign) UIBarStyle statusStyle;
 @property (nonatomic, assign) CGFloat contentOffSet_Y;
 
 @end
@@ -55,22 +51,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.navBarBackground.alpha = self.currentAlpha;
-    self.navigationController.navigationBar.barStyle = self.statusStyle;
-    
-    if (self.contentOffSet_Y > Height_Header) {
-        [self.backButton setImage:IMAGE(@"navLeft_gray") forState:UIControlStateNormal];
-        [self.backButton setImage:IMAGE(@"navLeft_gray") forState:UIControlStateHighlighted];
-        
-        //设置导航栏title属性
-        [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18], NSForegroundColorAttributeName:[UIColor blackColor]}];
-    } else {
-        [self.backButton setImage:IMAGE(@"navLeft") forState:UIControlStateNormal];
-        [self.backButton setImage:IMAGE(@"navLeft") forState:UIControlStateHighlighted];
-        
-        //设置导航栏title属性
-        [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18], NSForegroundColorAttributeName:[UIColor whiteColor]}];
-    }
+    [self changeNavBarAlpha:self.contentOffSet_Y];
 }
 
 - (void)viewDidLoad {
@@ -79,19 +60,7 @@
     
     [self setupUI];
     
-    for (id obj in self.navigationController.navigationBar.subviews) {
-        NSLog(@"---%@", obj);
-    }
-    NSLog(@"first: %@ --class: %@", self.navigationController.navigationBar.subviews.firstObject, NSStringFromClass([self.navigationController.navigationBar.subviews.firstObject class]));
-    
-    self.navBarBackground = self.navigationController.navigationBar.subviews.firstObject;
-    
     ///初始化
-    self.currentAlpha = 0;
-    self.navBarBackground.alpha = self.currentAlpha;
-    
-    self.statusStyle = UIStatusBarStyleLightContent;
-    
     self.contentOffSet_Y = 0;
     
 }
@@ -147,12 +116,6 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-//    ///不允许下拉
-//    if (scrollView.contentOffset.y < 0) {
-//        //向下滑动时 内容偏移量设置为(0, 0)
-//        [self.tableView setContentOffset:CGPointMake(0, 0) animated:NO];
-//    }
-    
     ///允许下拉 头视图拉伸效果
     CGFloat yOffset = scrollView.contentOffset.y;
     if (yOffset < 0) {//下拉
@@ -162,24 +125,32 @@
         
         imgView.frame = CGRectMake(0, yOffset, SCREEN_Width, Height_Header - yOffset);
     }
-    
     NSLog(@"contentOffset.y: %f", scrollView.contentOffset.y);
-    
     self.contentOffSet_Y = scrollView.contentOffset.y;
+    [self changeNavBarAlpha:self.contentOffSet_Y];
     
-    if (scrollView.contentOffset.y > Height_Header) {
+}
+
+#pragma mark -滑动导航渐变
+- (void)changeNavBarAlpha:(CGFloat)yOffset
+{
+    CGFloat currentAlpha = (yOffset - (-0))/(Height_Header/2.0 - (-0));
+    currentAlpha = currentAlpha <= 0.0 ? 0.0 : (currentAlpha >= 1.0 ? 1.0 : currentAlpha);
+    NSLog(@"---%f", currentAlpha);
+    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage createImageWithColor:[UIColor colorWithHexString:kNavBarColorString alpha:currentAlpha]] forBarMetrics:UIBarMetricsDefault];
+    
+    if (yOffset > Height_Header/2.0) {
         self.navigationController.navigationBar.barStyle = UIStatusBarStyleDefault;
-        self.statusStyle = UIStatusBarStyleDefault;
+        
         [self.backButton setImage:IMAGE(@"navLeft_gray") forState:UIControlStateNormal];
         [self.backButton setImage:IMAGE(@"navLeft_gray") forState:UIControlStateHighlighted];
         
         //设置导航栏title属性
         [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18], NSForegroundColorAttributeName:[UIColor blackColor]}];
         self.title = @"FTest";
-        
     } else {
         self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
-        self.statusStyle = UIStatusBarStyleLightContent;
         
         [self.backButton setImage:IMAGE(@"navLeft") forState:UIControlStateNormal];
         [self.backButton setImage:IMAGE(@"navLeft") forState:UIControlStateHighlighted];
@@ -188,13 +159,6 @@
         [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18], NSForegroundColorAttributeName:[UIColor whiteColor]}];
         self.title = @"";
     }
-    
-    CGFloat currentAlpha = (scrollView.contentOffset.y - (0))/(Height_Header - (0));
-    currentAlpha = currentAlpha < 0.0 ? 0.0 : (currentAlpha >= 1.0 ? 1.0 : currentAlpha);
-    
-    NSLog(@"---%f", currentAlpha);
-    self.currentAlpha = currentAlpha;
-    self.navBarBackground.alpha = self.currentAlpha;
 }
 
 - (void)didReceiveMemoryWarning {

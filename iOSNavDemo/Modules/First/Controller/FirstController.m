@@ -8,12 +8,11 @@
 
 #import "FirstController.h"
 #import "FTestController.h"
-#import "UIImage+ColorCreateImage.h"
 
 @interface FirstController ()<UINavigationControllerDelegate>
 
 @property (nonatomic, strong) UIButton *pushBtn;
-@property (nonatomic, assign) BOOL isCanUseSideBack;  // 手势是否启动
+@property (nonatomic, assign) BOOL isCanUseSideBack;//手势是否启动
 
 @end
 
@@ -89,7 +88,7 @@
     }];
     
     ///颜色转图片测试
-    UIImage *img = [UIImage createImageWithColor:COLOR(@"#55a3f2")];
+    UIImage *img = [UIImage createImageWithColor:kNavBarColor];
     UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(15, 100, SCREEN_Width - 30, 50)];
     imgView.image = img;
     [self.view addSubview:imgView];
@@ -116,10 +115,8 @@
 {
     BOOL isIndexPage = [viewController isKindOfClass:[self class]];
     
-    UIImageView *navBarBackground = self.navigationController.navigationBar.subviews.firstObject;
-    
     if (isIndexPage) {
-        navBarBackground.alpha = 1;
+        [self.navigationController.navigationBar setBackgroundImage:[UIImage createImageWithColor:kNavBarColor] forBarMetrics:UIBarMetricsDefault];
         navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
         [self.backButton setImage:IMAGE(@"navLeft") forState:UIControlStateNormal];
         [self.backButton setImage:IMAGE(@"navLeft") forState:UIControlStateHighlighted];

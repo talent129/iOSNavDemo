@@ -34,19 +34,9 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.navigationController.navigationBar.barTintColor = [UIColor purpleColor];
-    [UIApplication sharedApplication].keyWindow.backgroundColor = kVCViewColor;
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage createImageWithColor:[UIColor colorWithDecimalRed:253 green:128 blue:35 alpha:1]] forBarMetrics:UIBarMetricsDefault];
     
     self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    
-//    //恢复
-//    self.navigationController.navigationBar.barTintColor = [UIColor orangeColor];
-    
 }
 
 - (void)viewDidLoad {
@@ -77,15 +67,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -12,6 +12,7 @@
 #import "InterfaceDefine.h"
 #import "GlobalConfiguration.h"
 #import "Masonry.h"
+#import "UIImage+ColorCreateImage.h"
 
 @interface BaseController : UIViewController
 

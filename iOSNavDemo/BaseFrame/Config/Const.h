@@ -16,7 +16,8 @@
 /**
  导航栏颜色
  */
-#define kNavBarColor [UIColor orangeColor]
+#define kNavBarColor COLOR(@"#55a3f2")
+#define kNavBarColorString @"#55a3f2"
 
 ///控制器view颜色
 #define kVCViewColor COLOR(@"#efefef")

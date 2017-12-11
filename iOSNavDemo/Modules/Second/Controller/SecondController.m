@@ -8,14 +8,11 @@
 
 #import "SecondController.h"
 
-#define Height_Header 64
-
 @interface SecondController ()<UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, assign) BOOL isCanUseSideBack;  // 手势是否启动
+@property (nonatomic, assign) BOOL isCanUseSideBack;//手势是否启动
 
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) UIImageView *navBarBackground;
 
 @end
 
@@ -31,6 +28,7 @@
         _tableView.estimatedRowHeight = 100;
         _tableView.rowHeight = UITableViewAutomaticDimension;
         _tableView.scrollIndicatorInsets = UIEdgeInsetsMake(StatusBarHeight, 0, 0, 0);
+        
     }
     return _tableView;
 }
@@ -80,15 +78,8 @@
     // Do any additional setup after loading the view.
     
     [self createUI];
-    for (id obj in self.navigationController.navigationBar.subviews) {
-        NSLog(@"---%@", obj);
-    }
-    NSLog(@"first: %@ --class: %@", self.navigationController.navigationBar.subviews.firstObject, NSStringFromClass([self.navigationController.navigationBar.subviews.firstObject class]));
-    
-    self.navBarBackground = self.navigationController.navigationBar.subviews.firstObject;
-    
-    self.navBarBackground.alpha = 0;
     self.navigationController.navigationBar.barStyle = UIStatusBarStyleDefault;
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage createImageWithColor:[UIColor colorWithHexString:kNavBarColorString alpha:0]] forBarMetrics:UIBarMetricsDefault];
 }
 
 #pragma mark -createUI
@@ -149,7 +140,7 @@
     
     NSLog(@"contentOffset.y: %f", scrollView.contentOffset.y);
     
-    if (scrollView.contentOffset.y > Height_Header) {
+    if (scrollView.contentOffset.y > kNavBarHeight) {
         
         //设置导航栏title属性
         [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18], NSForegroundColorAttributeName:[UIColor whiteColor]}];
@@ -163,11 +154,11 @@
         self.navigationController.navigationBar.barStyle = UIStatusBarStyleDefault;
     }
     
-    CGFloat currentAlpha = (scrollView.contentOffset.y - (0))/(Height_Header - (0));
-    currentAlpha = currentAlpha < 0.0 ? 0.0 : (currentAlpha >= 1.0 ? 1.0 : currentAlpha);
+    CGFloat currentAlpha = (scrollView.contentOffset.y - (0))/(kNavBarHeight - (0));
+    currentAlpha = currentAlpha <= 0.0 ? 0.0 : (currentAlpha >= 1.0 ? 1.0 : currentAlpha);
     
     NSLog(@"---%f", currentAlpha);
-    self.navBarBackground.alpha = currentAlpha;
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage createImageWithColor:[UIColor colorWithHexString:kNavBarColorString alpha:currentAlpha]] forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)didReceiveMemoryWarning {

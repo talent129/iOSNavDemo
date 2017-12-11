@@ -30,12 +30,6 @@
     return _tableView;
 }
 
-#pragma mark -控制状态栏颜色
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
-    return UIStatusBarStyleDefault;//UIStatusBarStyleLightContent
-}
-
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [self cancelSideBack];
@@ -76,6 +70,7 @@
     // Do any additional setup after loading the view.
     
     self.navigationItem.title = @"Third";
+    self.navigationController.navigationBar.barStyle = UIStatusBarStyleDefault;
     
     [self setupUI];
 }

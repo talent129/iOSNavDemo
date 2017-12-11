@@ -8,6 +8,7 @@
 
 #import "BaseNavController.h"
 #import "Const.h"
+#import "UIImage+ColorCreateImage.h"
 
 @interface BaseNavController ()
 
@@ -23,13 +24,14 @@
     self.navigationBar.barStyle = UIStatusBarStyleLightContent;
     
     ///设置导航栏风格
-    ///1. 导航栏颜色-去除黑线: BaseController -> viewDidLoad -> navigationStyle
-    self.navigationBar.barTintColor = kNavBarColor;
-    self.navigationBar.translucent = NO;//导航栏不透明
+    ///1. 导航栏背景图片 - 颜色生成纯色图片
+    [self.navigationBar setBackgroundImage:[UIImage createImageWithColor:kNavBarColor] forBarMetrics:UIBarMetricsDefault];
+    ///去除导航栏底部横线
+    [self.navigationBar setShadowImage:[[UIImage alloc] init]];
     
-//    ///2. 导航栏背景图片 - 此种情况BaseController -> viewDidLoad -> navigationStyle可不必打开
+//    ///2. 导航栏背景图片
 //    [self.navigationBar setBackgroundImage:IMAGE(@"navPic_snow") forBarMetrics:UIBarMetricsDefault];
-//    //去除导航栏底部黑线
+//    //去除导航栏底部横线
 //    [self.navigationBar setShadowImage:[UIImage new]];
     
     //设置导航栏title属性

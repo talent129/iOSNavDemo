@@ -13,12 +13,10 @@ static CGFloat Height_Header = 200.0;
 @interface FSecondController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) UIImageView *navBarBackground;
 
 /**
- 标记当前页面 导航栏透明度、状态栏风格
+ 标记当前页面滑动偏移量
  */
-@property (nonatomic, assign) CGFloat currentAlpha;
 @property (nonatomic, assign) CGFloat contentOffSet_Y;
 
 @end
@@ -49,26 +47,7 @@ static CGFloat Height_Header = 200.0;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.navBarBackground.alpha = self.currentAlpha;
-    if (self.contentOffSet_Y > (StatusBarHeight + 44)) {
-        self.navigationController.navigationBar.barStyle = UIStatusBarStyleDefault;
-        [self.backButton setImage:IMAGE(@"navLeft_gray") forState:UIControlStateNormal];
-        [self.backButton setImage:IMAGE(@"navLeft_gray") forState:UIControlStateHighlighted];
-        
-        self.title = @"";
-    } else {
-        self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
-        [self.backButton setImage:IMAGE(@"navLeft") forState:UIControlStateNormal];
-        [self.backButton setImage:IMAGE(@"navLeft") forState:UIControlStateHighlighted];
-        
-        self.title = @"FSecond";
-    }
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    self.navBarBackground.alpha = 1;
+    [self changeNavBarAlpha:self.contentOffSet_Y];
 }
 
 - (void)viewDidLoad {
@@ -79,10 +58,6 @@ static CGFloat Height_Header = 200.0;
     
     [self setupUI];
     
-    self.navBarBackground = self.navigationController.navigationBar.subviews.firstObject;
-    
-    self.currentAlpha = 1;
-    self.navBarBackground.alpha = self.currentAlpha;
     self.contentOffSet_Y = 0;
 }
 
@@ -137,27 +112,43 @@ static CGFloat Height_Header = 200.0;
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    NSLog(@"--scrollView -contentOffset.y: %f", scrollView.contentOffset.y);
-    
+    NSLog(@"contentOffset.y: %f", scrollView.contentOffset.y);
     self.contentOffSet_Y = scrollView.contentOffset.y;
+    [self changeNavBarAlpha:self.contentOffSet_Y];
+}
+
+#pragma mark -滑动导航渐变
+- (void)changeNavBarAlpha:(CGFloat)yOffset
+{
+    CGFloat currentAlpha = (yOffset - (-0))/(Height_Header - (-0));
+    currentAlpha = currentAlpha <= 0.0 ? 0.0 : (currentAlpha >= 1.0 ? 1.0 : currentAlpha);
+    NSLog(@"---%f", 1 - currentAlpha);
     
-    if (scrollView.contentOffset.y > (StatusBarHeight + 44)) {
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage createImageWithColor:[UIColor colorWithHexString:kNavBarColorString alpha:1 - currentAlpha]] forBarMetrics:UIBarMetricsDefault];
+    
+    if (yOffset > Height_Header) {
         self.navigationController.navigationBar.barStyle = UIStatusBarStyleDefault;
+        
         [self.backButton setImage:IMAGE(@"navLeft_gray") forState:UIControlStateNormal];
         [self.backButton setImage:IMAGE(@"navLeft_gray") forState:UIControlStateHighlighted];
+        
+        //设置导航栏title属性
         self.title = @"";
     } else {
         self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
+        
         [self.backButton setImage:IMAGE(@"navLeft") forState:UIControlStateNormal];
         [self.backButton setImage:IMAGE(@"navLeft") forState:UIControlStateHighlighted];
+        
+        //设置导航栏title属性
+        [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18], NSForegroundColorAttributeName:[UIColor whiteColor]}];
         self.title = @"FSecond";
     }
-    
-    float currentAlpha = (scrollView.contentOffset.y - (-0)) / (float)(Height_Header - (-0));
-    currentAlpha = currentAlpha < 0.0 ? 0.0 : (currentAlpha >= 1.0 ? 1.0 : currentAlpha);
-    
-    self.currentAlpha = 1 - currentAlpha;
-    self.navBarBackground.alpha = self.currentAlpha;
+}
+
+- (void)dealloc
+{
+    NSLog(@"======dealloc: %@", NSStringFromClass([self class]));
 }
 
 - (void)didReceiveMemoryWarning {

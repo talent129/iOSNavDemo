@@ -10,11 +10,6 @@
 
 @interface BaseController ()
 
-/**
- 1. 给导航栏颜色方式设置导航栏: 导航栏底部存在黑线
- */
-@property (nonatomic, strong) UIImageView *navBarHorLineView;
-
 @end
 
 @implementation BaseController
@@ -38,35 +33,12 @@
     // Do any additional setup after loading the view.
     
     self.view.backgroundColor = kVCViewColor;
-    
-    [self navigationStyle];
+    ///取消自动偏移
+    if (!([[UIDevice currentDevice].systemVersion floatValue] >= 11.0)) {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
     
     [self zjsLeftBarButtonItem];
-}
-
-#pragma mark -导航栏风格
-- (void)navigationStyle
-{
-    //隐藏导航栏底部黑线
-    _navBarHorLineView = [self findHorLine:self.navigationController.navigationBar];
-    _navBarHorLineView.hidden = YES;
-}
-
-#pragma mark -拿到导航栏底部黑线
-- (UIImageView *)findHorLine:(UIView *)view
-{
-    if ([view isKindOfClass:[UIImageView class]] && view.bounds.size.height <= 1.0) {
-        return (UIImageView *)view;
-    }
-    
-    for (UIView *subView in view.subviews) {
-        UIImageView *imageView = [self findHorLine:subView];
-        if (imageView) {
-            return imageView;
-        }
-    }
-    
-    return nil;
 }
 
 #pragma mark -左侧返回按钮

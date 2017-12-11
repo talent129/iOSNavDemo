@@ -112,8 +112,8 @@
 		5FFA9FA81FD4E855005C9D7B /* BaseFrame */ = {
 			isa = PBXGroup;
 			children = (
-				5FFAA0071FD69407005C9D7B /* BaseNetwork */,
 				5FFA9FB11FD4E9A0005C9D7B /* Category */,
+				5FFAA0071FD69407005C9D7B /* BaseNetwork */,
 				5FFA9FAC1FD4E8A6005C9D7B /* BaseClass */,
 				5FFA9FAB1FD4E893005C9D7B /* Config */,
 			);
