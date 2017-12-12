@@ -7,10 +7,13 @@
 //
 
 #import "ThirdController.h"
+#import "ProtocolTestController.h"
+#import "MultiProtocolController.h"
 
 @interface ThirdController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSArray *titleArray;
 @property (nonatomic, assign) BOOL isCanUseSideBack;  // 手势是否启动
 
 @end
@@ -72,6 +75,8 @@
     self.navigationItem.title = @"Third";
     self.navigationController.navigationBar.barStyle = UIStatusBarStyleDefault;
     
+    self.titleArray = @[@"协议", @"多协议"];
+    
     [self setupUI];
 }
 
@@ -101,7 +106,11 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:iden];
     }
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%ld--%02zd", (long)indexPath.section, indexPath.row];
+    if (indexPath.row < 2) {
+        cell.textLabel.text = self.titleArray[indexPath.row];
+    } else {
+        cell.textLabel.text = [NSString stringWithFormat:@"section: %ld-row: %02zd", indexPath.section, indexPath.row];
+    }
     
     return cell;
 }
@@ -112,6 +121,22 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSLog(@"---click cell: %@", indexPath);
     
+    switch (indexPath.row) {
+        case 0:
+        {
+            ProtocolTestController *vc = [[ProtocolTestController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        case 1:
+        {
+            MultiProtocolController *vc = [[MultiProtocolController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section

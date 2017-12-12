@@ -10,6 +10,8 @@
 		5F64C0771FD14E3B009F4B08 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F64C0761FD14E3B009F4B08 /* AppDelegate.m */; };
 		5F64C07F1FD14E3B009F4B08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F64C07E1FD14E3B009F4B08 /* Assets.xcassets */; };
 		5F64C0851FD14E3B009F4B08 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F64C0841FD14E3B009F4B08 /* main.m */; };
+		5FCEB7841FDFC2D60018E126 /* ProtocolTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCEB7831FDFC2D60018E126 /* ProtocolTestController.m */; };
+		5FCEB7871FDFDCF10018E126 /* MultiProtocolController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCEB7861FDFDCF10018E126 /* MultiProtocolController.m */; };
 		5FFA9FB51FD4E9BB005C9D7B /* UIColor+hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFA9FB41FD4E9BB005C9D7B /* UIColor+hex.m */; };
 		5FFA9FC81FD4EA4E005C9D7B /* BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFA9FC71FD4EA4E005C9D7B /* BaseController.m */; };
 		5FFA9FCB1FD4EAC5005C9D7B /* BaseNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFA9FCA1FD4EAC5005C9D7B /* BaseNavController.m */; };
@@ -34,6 +36,10 @@
 		5F64C07E1FD14E3B009F4B08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F64C0831FD14E3B009F4B08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F64C0841FD14E3B009F4B08 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5FCEB7821FDFC2D60018E126 /* ProtocolTestController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProtocolTestController.h; sourceTree = "<group>"; };
+		5FCEB7831FDFC2D60018E126 /* ProtocolTestController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProtocolTestController.m; sourceTree = "<group>"; };
+		5FCEB7851FDFDCF10018E126 /* MultiProtocolController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiProtocolController.h; sourceTree = "<group>"; };
+		5FCEB7861FDFDCF10018E126 /* MultiProtocolController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiProtocolController.m; sourceTree = "<group>"; };
 		5FFA9FB31FD4E9BB005C9D7B /* UIColor+hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+hex.h"; sourceTree = "<group>"; };
 		5FFA9FB41FD4E9BB005C9D7B /* UIColor+hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+hex.m"; sourceTree = "<group>"; };
 		5FFA9FC21FD4EA28005C9D7B /* Const.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Const.h; sourceTree = "<group>"; };
@@ -232,6 +238,10 @@
 			children = (
 				5FFA9FD51FD4EB49005C9D7B /* ThirdController.h */,
 				5FFA9FD61FD4EB49005C9D7B /* ThirdController.m */,
+				5FCEB7821FDFC2D60018E126 /* ProtocolTestController.h */,
+				5FCEB7831FDFC2D60018E126 /* ProtocolTestController.m */,
+				5FCEB7851FDFDCF10018E126 /* MultiProtocolController.h */,
+				5FCEB7861FDFDCF10018E126 /* MultiProtocolController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -549,6 +559,8 @@
 				5FFA9FD71FD4EB49005C9D7B /* ThirdController.m in Sources */,
 				5FFA9FCB1FD4EAC5005C9D7B /* BaseNavController.m in Sources */,
 				5FFA9FB51FD4E9BB005C9D7B /* UIColor+hex.m in Sources */,
+				5FCEB7871FDFDCF10018E126 /* MultiProtocolController.m in Sources */,
+				5FCEB7841FDFC2D60018E126 /* ProtocolTestController.m in Sources */,
 				5FFA9FD11FD4EB18005C9D7B /* FirstController.m in Sources */,
 				5FFAA0051FD54E02005C9D7B /* UIImage+ColorCreateImage.m in Sources */,
 				5FFA9FC81FD4EA4E005C9D7B /* BaseController.m in Sources */,
