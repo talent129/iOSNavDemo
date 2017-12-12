@@ -50,10 +50,10 @@
     
     self.viewControllers = @[firstNav, secondNav, thirdNav, fourthNav];
     
-    [self setTabItemIndex:0 withTitle:@"index" withImageName:@"navLeft" withSelectImageName:@"navLeft"];
-    [self setTabItemIndex:1 withTitle:@"second" withImageName:@"navLeft" withSelectImageName:@"navLeft"];
-    [self setTabItemIndex:2 withTitle:@"third" withImageName:@"navLeft" withSelectImageName:@"navLeft"];
-    [self setTabItemIndex:3 withTitle:@"mine" withImageName:@"navLeft" withSelectImageName:@"navLeft"];
+    [self setTabItemIndex:0 withTitle:@"index" withImageName:@"find_normal" withSelectImageName:@"find_selected"];
+    [self setTabItemIndex:1 withTitle:@"second" withImageName:@"find_normal" withSelectImageName:@"find_selected"];
+    [self setTabItemIndex:2 withTitle:@"third" withImageName:@"find_normal" withSelectImageName:@"find_selected"];
+    [self setTabItemIndex:3 withTitle:@"mine" withImageName:@"find_normal" withSelectImageName:@"find_selected"];
 }
 
 #pragma mark -自定义item样式
