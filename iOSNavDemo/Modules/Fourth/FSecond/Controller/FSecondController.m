@@ -36,7 +36,6 @@ static CGFloat Height_Header = 200.0;
         _tableView.scrollIndicatorInsets = UIEdgeInsetsMake(kNavBarHeight, 0, 0, 0);
         
         UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_Width, Height_Header)];
-        headView.backgroundColor = [UIColor magentaColor];
         headView.backgroundColor = [UIColor colorWithPatternImage:IMAGE(@"header")];
         _tableView.tableHeaderView = headView;
         
@@ -48,6 +47,7 @@ static CGFloat Height_Header = 200.0;
 {
     [super viewWillAppear:animated];
     [self changeNavBarAlpha:self.contentOffSet_Y];
+    
 }
 
 - (void)viewDidLoad {
@@ -59,6 +59,7 @@ static CGFloat Height_Header = 200.0;
     [self setupUI];
     
     self.contentOffSet_Y = 0;
+    
 }
 
 #pragma mark -setupUI

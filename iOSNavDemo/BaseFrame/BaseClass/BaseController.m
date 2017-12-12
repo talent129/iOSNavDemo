@@ -32,11 +32,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = kVCViewColor;
     ///取消自动偏移
     if (!([[UIDevice currentDevice].systemVersion floatValue] >= 11.0)) {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
+    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.extendedLayoutIncludesOpaqueBars = YES;
+    
+    self.view.backgroundColor = kVCViewColor;
     
     [self zjsLeftBarButtonItem];
 }
