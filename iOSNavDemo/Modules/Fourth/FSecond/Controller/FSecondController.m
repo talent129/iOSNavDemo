@@ -147,11 +147,6 @@ static CGFloat Height_Header = 200.0;
     }
 }
 
-- (void)dealloc
-{
-    NSLog(@"======dealloc: %@", NSStringFromClass([self class]));
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

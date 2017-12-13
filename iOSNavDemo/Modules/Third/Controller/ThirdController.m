@@ -9,6 +9,7 @@
 #import "ThirdController.h"
 #import "ProtocolTestController.h"
 #import "MultiProtocolController.h"
+#import "SuccessController.h"
 
 @interface ThirdController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -75,7 +76,7 @@
     self.navigationItem.title = @"Third";
     self.navigationController.navigationBar.barStyle = UIStatusBarStyleDefault;
     
-    self.titleArray = @[@"协议", @"多协议"];
+    self.titleArray = @[@"协议", @"多协议", @"勾号动画"];
     
     [self setupUI];
 }
@@ -106,7 +107,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:iden];
     }
     
-    if (indexPath.row < 2) {
+    if (indexPath.row < 3) {
         cell.textLabel.text = self.titleArray[indexPath.row];
     } else {
         cell.textLabel.text = [NSString stringWithFormat:@"section: %ld-row: %02zd", indexPath.section, indexPath.row];
@@ -134,6 +135,13 @@
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
+        case 2:
+        {
+            SuccessController *vc = [[SuccessController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+            
         default:
             break;
     }
