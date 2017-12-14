@@ -14,6 +14,7 @@
 		5FCEB7871FDFDCF10018E126 /* MultiProtocolController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCEB7861FDFDCF10018E126 /* MultiProtocolController.m */; };
 		5FCEB78A1FE10A7A0018E126 /* SuccessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCEB7891FE10A7A0018E126 /* SuccessView.m */; };
 		5FCEB78D1FE120440018E126 /* SuccessController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCEB78C1FE120440018E126 /* SuccessController.m */; };
+		5FCEB7931FE26C750018E126 /* LabelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCEB7921FE26C750018E126 /* LabelController.m */; };
 		5FFA9FB51FD4E9BB005C9D7B /* UIColor+hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFA9FB41FD4E9BB005C9D7B /* UIColor+hex.m */; };
 		5FFA9FC81FD4EA4E005C9D7B /* BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFA9FC71FD4EA4E005C9D7B /* BaseController.m */; };
 		5FFA9FCB1FD4EAC5005C9D7B /* BaseNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFA9FCA1FD4EAC5005C9D7B /* BaseNavController.m */; };
@@ -46,6 +47,8 @@
 		5FCEB7891FE10A7A0018E126 /* SuccessView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuccessView.m; sourceTree = "<group>"; };
 		5FCEB78B1FE120440018E126 /* SuccessController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuccessController.h; sourceTree = "<group>"; };
 		5FCEB78C1FE120440018E126 /* SuccessController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuccessController.m; sourceTree = "<group>"; };
+		5FCEB7911FE26C750018E126 /* LabelController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LabelController.h; sourceTree = "<group>"; };
+		5FCEB7921FE26C750018E126 /* LabelController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LabelController.m; sourceTree = "<group>"; };
 		5FFA9FB31FD4E9BB005C9D7B /* UIColor+hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+hex.h"; sourceTree = "<group>"; };
 		5FFA9FB41FD4E9BB005C9D7B /* UIColor+hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+hex.m"; sourceTree = "<group>"; };
 		5FFA9FC21FD4EA28005C9D7B /* Const.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Const.h; sourceTree = "<group>"; };
@@ -250,6 +253,8 @@
 				5FCEB7861FDFDCF10018E126 /* MultiProtocolController.m */,
 				5FCEB78B1FE120440018E126 /* SuccessController.h */,
 				5FCEB78C1FE120440018E126 /* SuccessController.m */,
+				5FCEB7911FE26C750018E126 /* LabelController.h */,
+				5FCEB7921FE26C750018E126 /* LabelController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -574,6 +579,7 @@
 				5FCEB78D1FE120440018E126 /* SuccessController.m in Sources */,
 				5FFA9FD11FD4EB18005C9D7B /* FirstController.m in Sources */,
 				5FFAA0051FD54E02005C9D7B /* UIImage+ColorCreateImage.m in Sources */,
+				5FCEB7931FE26C750018E126 /* LabelController.m in Sources */,
 				5FCEB78A1FE10A7A0018E126 /* SuccessView.m in Sources */,
 				5FFA9FC81FD4EA4E005C9D7B /* BaseController.m in Sources */,
 				5FFA9FFE1FD5486E005C9D7B /* FTestController.m in Sources */,

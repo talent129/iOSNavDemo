@@ -99,13 +99,13 @@
     
     ///颜色转图片测试
     UIImage *img = [UIImage createImageWithColor:kNavBarColor];
-    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(15, 100, SCREEN_Width - 30, 50)];
+    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(15, 100, SCREEN_Width - 30, 49)];
     imgView.image = img;
     [self.view addSubview:imgView];
     
     UILabel *descr = [[UILabel alloc] init];
     descr.text = @"颜色转图片测试-非按钮";
-    descr.textColor = [UIColor cyanColor];
+    descr.textColor = [UIColor whiteColor];
     descr.font = Font(15);
     descr.textAlignment = NSTextAlignmentCenter;
     [imgView addSubview:descr];

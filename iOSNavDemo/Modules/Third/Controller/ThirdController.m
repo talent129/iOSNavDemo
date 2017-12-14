@@ -10,6 +10,7 @@
 #import "ProtocolTestController.h"
 #import "MultiProtocolController.h"
 #import "SuccessController.h"
+#import "LabelController.h"
 
 @interface ThirdController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -76,7 +77,7 @@
     self.navigationItem.title = @"Third";
     self.navigationController.navigationBar.barStyle = UIStatusBarStyleDefault;
     
-    self.titleArray = @[@"协议", @"多协议", @"动画"];
+    self.titleArray = @[@"协议", @"多协议", @"动画", @"label设置文字不同颜色、大小"];
     
     [self setupUI];
     
@@ -117,7 +118,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:iden];
     }
     
-    if (indexPath.row < 3) {
+    if (indexPath.row < 4) {
         cell.textLabel.text = self.titleArray[indexPath.row];
     } else {
         cell.textLabel.text = [NSString stringWithFormat:@"section: %ld-row: %02zd", indexPath.section, indexPath.row];
@@ -148,6 +149,12 @@
         case 2:
         {
             SuccessController *vc = [[SuccessController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        case 3:
+        {
+            LabelController *vc = [[LabelController alloc] init];
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
