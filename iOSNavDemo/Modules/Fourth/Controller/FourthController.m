@@ -12,7 +12,7 @@
 @interface FourthController ()<UINavigationControllerDelegate>
 
 @property (nonatomic, strong) UIButton *pushBtn;
-@property (nonatomic, assign) BOOL isCanUseSideBack;  // 手势是否启动
+//@property (nonatomic, assign) BOOL isCanUseSideBack;  // 手势是否启动
 
 @end
 
@@ -31,40 +31,40 @@
     return _pushBtn;
 }
 
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    [self cancelSideBack];
-}
-
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-    [self startSideBack];
-}
-
-/**
- * 关闭右滑返回
- */
--(void)cancelSideBack{
-    self.isCanUseSideBack = NO;
-    
-    if([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-        self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
-    }
-}
-/*
- 开启右滑返回
- */
-- (void)startSideBack {
-    self.isCanUseSideBack = YES;
-    
-    if([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-        self.navigationController.interactivePopGestureRecognizer.delegate = nil;
-    }
-}
-
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer*)gestureRecognizer {
-    return self.isCanUseSideBack;
-}
+//-(void)viewDidAppear:(BOOL)animated{
+//    [super viewDidAppear:animated];
+//    [self cancelSideBack];
+//}
+//
+//- (void)viewDidDisappear:(BOOL)animated {
+//    [super viewDidDisappear:animated];
+//    [self startSideBack];
+//}
+//
+///**
+// * 关闭右滑返回
+// */
+//-(void)cancelSideBack{
+//    self.isCanUseSideBack = NO;
+//
+//    if([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+//        self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
+//    }
+//}
+///*
+// 开启右滑返回
+// */
+//- (void)startSideBack {
+//    self.isCanUseSideBack = YES;
+//
+//    if([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+//        self.navigationController.interactivePopGestureRecognizer.delegate = nil;
+//    }
+//}
+//
+//- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer*)gestureRecognizer {
+//    return self.isCanUseSideBack;
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

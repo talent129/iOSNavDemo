@@ -15,7 +15,7 @@
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *titleArray;
-@property (nonatomic, assign) BOOL isCanUseSideBack;  // 手势是否启动
+//@property (nonatomic, assign) BOOL isCanUseSideBack;  // 手势是否启动
 
 @end
 
@@ -34,40 +34,40 @@
     return _tableView;
 }
 
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    [self cancelSideBack];
-}
-
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-    [self startSideBack];
-}
-
-/**
- * 关闭右滑返回
- */
--(void)cancelSideBack{
-    self.isCanUseSideBack = NO;
-    
-    if([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-        self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
-    }
-}
-/*
- 开启右滑返回
- */
-- (void)startSideBack {
-    self.isCanUseSideBack = YES;
-    
-    if([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-        self.navigationController.interactivePopGestureRecognizer.delegate = nil;
-    }
-}
-
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer*)gestureRecognizer {
-    return self.isCanUseSideBack;
-}
+//-(void)viewDidAppear:(BOOL)animated{
+//    [super viewDidAppear:animated];
+//    [self cancelSideBack];
+//}
+//
+//- (void)viewDidDisappear:(BOOL)animated {
+//    [super viewDidDisappear:animated];
+//    [self startSideBack];
+//}
+//
+///**
+// * 关闭右滑返回
+// */
+//-(void)cancelSideBack{
+//    self.isCanUseSideBack = NO;
+//    
+//    if([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+//        self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
+//    }
+//}
+///*
+// 开启右滑返回
+// */
+//- (void)startSideBack {
+//    self.isCanUseSideBack = YES;
+//    
+//    if([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+//        self.navigationController.interactivePopGestureRecognizer.delegate = nil;
+//    }
+//}
+//
+//- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer*)gestureRecognizer {
+//    return self.isCanUseSideBack;
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -76,9 +76,19 @@
     self.navigationItem.title = @"Third";
     self.navigationController.navigationBar.barStyle = UIStatusBarStyleDefault;
     
-    self.titleArray = @[@"协议", @"多协议", @"勾号动画"];
+    self.titleArray = @[@"协议", @"多协议", @"动画"];
     
     [self setupUI];
+    
+    [self addRightBarBtnWithImage];
+}
+
+//右侧按钮 -测试
+- (void)addRightBarBtnWithImage
+{
+    [self rightButtonWithImage:@"home__share_close" andHighlighted:@"home__share_close" andHandle:^(UIButton *button) {
+        NSLog(@"--点击了右侧按钮-图片");
+    }];
 }
 
 #pragma mark -setupUI

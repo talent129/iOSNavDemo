@@ -12,7 +12,7 @@
 @interface FirstController ()<UINavigationControllerDelegate>
 
 @property (nonatomic, strong) UIButton *pushBtn;
-@property (nonatomic, assign) BOOL isCanUseSideBack;//手势是否启动
+//@property (nonatomic, assign) BOOL isCanUseSideBack;//手势是否启动
 
 @end
 
@@ -32,40 +32,40 @@
     return _pushBtn;
 }
 
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    [self cancelSideBack];
-}
+//-(void)viewDidAppear:(BOOL)animated{
+//    [super viewDidAppear:animated];
+//    [self cancelSideBack];
+//}
+//
+//- (void)viewDidDisappear:(BOOL)animated {
+//    [super viewDidDisappear:animated];
+//    [self startSideBack];
+//}
+//
+///**
+// * 关闭右滑返回
+// */
+//-(void)cancelSideBack{
+//    self.isCanUseSideBack = NO;
+//
+//    if([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+//        self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
+//    }
+//}
+///*
+// 开启右滑返回
+// */
+//- (void)startSideBack {
+//    self.isCanUseSideBack = YES;
+//
+//    if([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+//        self.navigationController.interactivePopGestureRecognizer.delegate = nil;
+//    }
+//}
 
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-    [self startSideBack];
-}
-
-/**
- * 关闭右滑返回
- */
--(void)cancelSideBack{
-    self.isCanUseSideBack = NO;
-    
-    if([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-        self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
-    }
-}
-/*
- 开启右滑返回
- */
-- (void)startSideBack {
-    self.isCanUseSideBack = YES;
-    
-    if([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-        self.navigationController.interactivePopGestureRecognizer.delegate = nil;
-    }
-}
-
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer*)gestureRecognizer {
-    return self.isCanUseSideBack;
-}
+//- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer*)gestureRecognizer {
+//    return self.isCanUseSideBack;
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -76,6 +76,16 @@
     [self createUI];
     
     self.navigationController.delegate = self;
+    
+    [self addRightBarBtnWithTitle];
+}
+
+///右侧按钮 测试
+- (void)addRightBarBtnWithTitle
+{
+    [self rightButtonWithTitle:@"按钮" andHandle:^(UIButton *button) {
+        NSLog(@"--点击了右侧按钮-文字");
+    }];
 }
 
 #pragma mark -createUI

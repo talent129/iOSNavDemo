@@ -40,6 +40,7 @@
 {
     [self hideSuccessView];
     
+    //bounds: 绝对 (0, 0) frame: 相对
     _circleView = [[UIView alloc] initWithFrame:self.bounds];
     
     /**
@@ -52,7 +53,7 @@
      clockwise 顺时针/逆时针
      */
     
-    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(self.frame.size.width/2.0, self.frame.size.height/2.0) radius:self.frame.size.width/2.0 startAngle:0 endAngle:M_PI * 2 clockwise:YES];
+    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:CGPointMake(_circleView.center.x, _circleView.center.y) radius:self.frame.size.width/2.0 startAngle:0 endAngle:M_PI * 2 clockwise:YES];
     
     //设置线段两端样式
     path.lineCapStyle  = kCGLineCapRound;

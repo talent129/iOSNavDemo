@@ -10,7 +10,7 @@
 #import "Const.h"
 #import "UIImage+ColorCreateImage.h"
 
-@interface BaseNavController ()
+@interface BaseNavController ()<UIGestureRecognizerDelegate, UINavigationControllerDelegate>
 
 @end
 
@@ -37,9 +37,20 @@
     //设置导航栏title属性
     [self.navigationBar setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18], NSForegroundColorAttributeName:[UIColor whiteColor]}];
     
-    //侧滑返回
-    self.interactivePopGestureRecognizer.delegate = (id)self;
+//    //侧滑返回
+//    self.interactivePopGestureRecognizer.delegate = (id)self;
     
+    [self popGesture];
+}
+
+- (void)popGesture
+{
+    if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)])
+    {
+        self.interactivePopGestureRecognizer.enabled  = YES;
+        self.interactivePopGestureRecognizer.delegate = self;
+        self.delegate = self;
+    }
 }
 
 //重写系统push方法
@@ -50,6 +61,29 @@
     }
     
     [super pushViewController:viewController animated:animated];
+}
+
+#pragma mark -UIGestureRecognizerDelegate
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer == self.interactivePopGestureRecognizer)
+    {
+        if (self.viewControllers.count == 1)
+        {
+            return NO;
+        }
+    }
+    return YES;
+}
+
+- (void)dealloc
+{
+    NSLog(@"--dealloc: %@", NSStringFromClass([self class]));
+    if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)])
+    {
+        self.interactivePopGestureRecognizer.delegate = nil;
+        self.delegate = nil;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

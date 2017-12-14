@@ -64,6 +64,67 @@
     [[UIApplication sharedApplication].keyWindow endEditing:YES];
 }
 
+//添加右侧按钮
+- (void)rightButtonWithTitle:(NSString *)title andHandle:(RightBtnBlock)block
+{
+    [self.rightBtn setTitle:title forState:UIControlStateNormal];
+    
+    [self.rightBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    [self.rightBtn setTitleColor:COLOR(@"#999999") forState:UIControlStateHighlighted];
+    self.rightBtn.titleLabel.font = Font(15);
+    if (title.length > 2) {
+        self.rightBtn.frame = CGRectMake(0, 0, 100, 44);
+    }else {
+        self.rightBtn.frame = CGRectMake(0, 0, 40, 44);
+    }
+    
+    if (IOS7_OR_LATER) {
+        if (title.length > 2) {
+            self.rightBtn.titleEdgeInsets = UIEdgeInsetsMake(10, 30, 0, -5);
+        }else {
+            self.rightBtn.titleEdgeInsets = UIEdgeInsetsMake(10, 10, 0, 0);
+        }
+    }
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.rightBtn];
+    
+    self.rightBtnBlock = block;
+}
+
+- (void)rightButtonWithImage:(NSString *)imageName andHighlighted:(NSString *)highlightedName andHandle:(RightBtnBlock)block
+{
+    [self.rightBtn setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+    [self.rightBtn setImage:[UIImage imageNamed:highlightedName] forState:UIControlStateHighlighted];
+    
+    self.rightBtn.frame = CGRectMake(0, 0, 44, 44);
+    
+    if (IOS7_OR_LATER) {
+        self.rightBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -22);
+    }
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.rightBtn];
+    self.rightBtnBlock = block;
+}
+
+//右侧按钮点击事件
+- (void)rightButtonAction:(UIButton *)button{
+    
+    if (self.rightBtnBlock) {
+        self.rightBtnBlock(button);
+    }
+}
+
+#pragma mark -getter
+_GETTER_BEGIN(UIButton, rightBtn)
+{
+    _rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_rightBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_rightBtn setFrame:_CGR(0, 0, 30, 28)];
+    [_rightBtn addTarget:self action:@selector(rightButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+}
+_GETTER_END(rightBtn)
+
 - (void)dealloc
 {
     NSLog(@"--dealloc: %@", NSStringFromClass([self class]));

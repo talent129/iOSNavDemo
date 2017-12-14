@@ -14,8 +14,18 @@
 #import "Masonry.h"
 #import "UIImage+ColorCreateImage.h"
 
+typedef void(^RightBtnBlock)(UIButton *button);
+
 @interface BaseController : UIViewController
 
 @property (nonatomic, strong) UIButton *backButton;
+
+@property (nonatomic, strong) UIButton *rightBtn;
+@property (nonatomic, copy) RightBtnBlock rightBtnBlock;
+
+//添加右侧按钮
+- (void)rightButtonWithTitle:(NSString *)title andHandle:(RightBtnBlock)block;
+
+- (void)rightButtonWithImage:(NSString *)imageName andHighlighted:(NSString *)highlightedName andHandle:(RightBtnBlock)block;
 
 @end
