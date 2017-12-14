@@ -40,17 +40,6 @@
 //导航栏高度
 #define kNavBarHeight (StatusBarHeight + 44)
 
-//系统版本判断
-#define IOS11_OR_LATER    ( [[[UIDevice currentDevice] systemVersion] compare:@"11.0"] != NSOrderedAscending )
-#define IOS10_OR_LATER    ( [[[UIDevice currentDevice] systemVersion] compare:@"10.0"] != NSOrderedAscending )
-#define IOS9_OR_LATER    ( [[[UIDevice currentDevice] systemVersion] compare:@"9.0"] != NSOrderedAscending )
-#define IOS8_OR_LATER    ( [[[UIDevice currentDevice] systemVersion] compare:@"8.0"] != NSOrderedAscending )
-#define IOS7_OR_LATER    ( [[[UIDevice currentDevice] systemVersion] compare:@"7.0"] != NSOrderedAscending )
-#define IOS6_OR_LATER    ( [[[UIDevice currentDevice] systemVersion] compare:@"6.0"] != NSOrderedAscending )
-#define IOS5_OR_LATER    ( [[[UIDevice currentDevice] systemVersion] compare:@"5.0"] != NSOrderedAscending )
-#define IOS4_OR_LATER    ( [[[UIDevice currentDevice] systemVersion] compare:@"4.0"] != NSOrderedAscending )
-#define IOS3_OR_LATER    ( [[[UIDevice currentDevice] systemVersion] compare:@"3.0"] != NSOrderedAscending )
-
 /* 显示打印行 */
 #if DEBUG
 #define NSLog(FORMAT, ...) fprintf(stderr, "[%s:%d行] %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);

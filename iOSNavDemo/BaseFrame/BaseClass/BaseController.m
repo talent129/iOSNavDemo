@@ -79,12 +79,10 @@
         self.rightBtn.frame = CGRectMake(0, 0, 40, 44);
     }
     
-    if (IOS7_OR_LATER) {
-        if (title.length > 2) {
-            self.rightBtn.titleEdgeInsets = UIEdgeInsetsMake(10, 30, 0, -5);
-        }else {
-            self.rightBtn.titleEdgeInsets = UIEdgeInsetsMake(10, 10, 0, 0);
-        }
+    if (title.length > 2) {
+        self.rightBtn.titleEdgeInsets = UIEdgeInsetsMake(10, 50, 0, -10);
+    }else {
+        self.rightBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, -10);
     }
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.rightBtn];
@@ -98,10 +96,7 @@
     [self.rightBtn setImage:[UIImage imageNamed:highlightedName] forState:UIControlStateHighlighted];
     
     self.rightBtn.frame = CGRectMake(0, 0, 44, 44);
-    
-    if (IOS7_OR_LATER) {
-        self.rightBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -22);
-    }
+    self.rightBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -27);
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.rightBtn];
     self.rightBtnBlock = block;
@@ -119,8 +114,6 @@
 _GETTER_BEGIN(UIButton, rightBtn)
 {
     _rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_rightBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_rightBtn setFrame:_CGR(0, 0, 30, 28)];
     [_rightBtn addTarget:self action:@selector(rightButtonAction:) forControlEvents:UIControlEventTouchUpInside];
 }
 _GETTER_END(rightBtn)
