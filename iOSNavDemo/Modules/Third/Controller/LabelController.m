@@ -51,6 +51,38 @@
     [attributedString addAttribute:NSFontAttributeName value:Font(27) range:anotherRange];
     [setLabel setAttributedText:attributedString];
     
+    /* 中划线 */
+    UILabel *midLabel = [[UILabel alloc] init];
+    midLabel.text = @"设置中划线";
+    midLabel.textAlignment = NSTextAlignmentLeft;
+    midLabel.font = Font(25);
+    midLabel.textColor = [UIColor purpleColor];
+    [self.view addSubview:midLabel];
+    [midLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(@15);
+        make.trailing.equalTo(@-15);
+        make.top.equalTo(setLabel.mas_bottom).mas_offset(10);
+    }];
+    NSDictionary *midDic = @{NSStrikethroughStyleAttributeName:[NSNumber numberWithInteger:NSUnderlineStyleSingle]};
+    NSMutableAttributedString *midAttributedStr = [[NSMutableAttributedString alloc] initWithString:midLabel.text attributes:midDic];
+    midLabel.attributedText = midAttributedStr;
+    
+    /* 下划线 */
+    UILabel *underLabel = [[UILabel alloc] init];
+    underLabel.text = @"设置下划线";
+    underLabel.textAlignment = NSTextAlignmentLeft;
+    underLabel.font = Font(25);
+    underLabel.textColor = [UIColor magentaColor];
+    [self.view addSubview:underLabel];
+    [underLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(@15);
+        make.trailing.equalTo(@-15);
+        make.top.equalTo(midLabel.mas_bottom).mas_offset(10);
+    }];
+    
+    NSDictionary *underAttributedDic = @{NSUnderlineStyleAttributeName: [NSNumber numberWithInteger:NSUnderlineStyleSingle], NSUnderlineColorAttributeName: [UIColor lightGrayColor]};
+    NSMutableAttributedString *underAttributedStr = [[NSMutableAttributedString alloc]initWithString:underLabel.text attributes:underAttributedDic];
+    underLabel.attributedText = underAttributedStr;
 }
 
 - (void)didReceiveMemoryWarning {

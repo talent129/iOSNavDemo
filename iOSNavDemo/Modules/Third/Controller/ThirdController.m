@@ -77,7 +77,7 @@
     self.navigationItem.title = @"Third";
     self.navigationController.navigationBar.barStyle = UIStatusBarStyleDefault;
     
-    self.titleArray = @[@"协议", @"多协议", @"动画", @"label设置文字不同颜色、大小"];
+    self.titleArray = @[@"协议", @"多协议", @"动画", @"label设置文字不同颜色、大小, 下划线"];
     
     [self setupUI];
     
@@ -137,6 +137,7 @@
         case 0:
         {
             ProtocolTestController *vc = [[ProtocolTestController alloc] init];
+            vc.title = @"协议";
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;

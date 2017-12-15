@@ -38,7 +38,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.title = @"协议";
     [self createUI];
     
 }
@@ -67,7 +66,7 @@
     self.contentView = contentView;
     [contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(maskView);
-        make.size.mas_equalTo(CGSizeMake(SCREEN_Width - 60, SCREEN_Height - 60));
+        make.size.mas_equalTo(CGSizeMake(SCREEN_Width - 60, SCREEN_Height - (StatusBarHeight + 10) * 2));
     }];
     
     UILabel *titleLabel = [[UILabel alloc] init];
