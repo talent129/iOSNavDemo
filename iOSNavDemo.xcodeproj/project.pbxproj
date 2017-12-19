@@ -10,6 +10,7 @@
 		5F64C0771FD14E3B009F4B08 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F64C0761FD14E3B009F4B08 /* AppDelegate.m */; };
 		5F64C07F1FD14E3B009F4B08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F64C07E1FD14E3B009F4B08 /* Assets.xcassets */; };
 		5F64C0851FD14E3B009F4B08 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F64C0841FD14E3B009F4B08 /* main.m */; };
+		5F8524FF1FE9002C000DD5D0 /* ThirdTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F8524FE1FE9002C000DD5D0 /* ThirdTestController.m */; };
 		5FCEB7841FDFC2D60018E126 /* ProtocolTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCEB7831FDFC2D60018E126 /* ProtocolTestController.m */; };
 		5FCEB7871FDFDCF10018E126 /* MultiProtocolController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCEB7861FDFDCF10018E126 /* MultiProtocolController.m */; };
 		5FCEB78A1FE10A7A0018E126 /* SuccessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCEB7891FE10A7A0018E126 /* SuccessView.m */; };
@@ -40,6 +41,8 @@
 		5F64C07E1FD14E3B009F4B08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F64C0831FD14E3B009F4B08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F64C0841FD14E3B009F4B08 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5F8524FD1FE9002C000DD5D0 /* ThirdTestController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdTestController.h; sourceTree = "<group>"; };
+		5F8524FE1FE9002C000DD5D0 /* ThirdTestController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdTestController.m; sourceTree = "<group>"; };
 		5FCEB7821FDFC2D60018E126 /* ProtocolTestController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProtocolTestController.h; sourceTree = "<group>"; };
 		5FCEB7831FDFC2D60018E126 /* ProtocolTestController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProtocolTestController.m; sourceTree = "<group>"; };
 		5FCEB7851FDFDCF10018E126 /* MultiProtocolController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiProtocolController.h; sourceTree = "<group>"; };
@@ -258,6 +261,8 @@
 				5FCEB78C1FE120440018E126 /* SuccessController.m */,
 				5FCEB7911FE26C750018E126 /* LabelController.h */,
 				5FCEB7921FE26C750018E126 /* LabelController.m */,
+				5F8524FD1FE9002C000DD5D0 /* ThirdTestController.h */,
+				5F8524FE1FE9002C000DD5D0 /* ThirdTestController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -587,6 +592,7 @@
 				5FCEB7931FE26C750018E126 /* LabelController.m in Sources */,
 				5FCEB78A1FE10A7A0018E126 /* SuccessView.m in Sources */,
 				5FFA9FC81FD4EA4E005C9D7B /* BaseController.m in Sources */,
+				5F8524FF1FE9002C000DD5D0 /* ThirdTestController.m in Sources */,
 				5FFA9FFE1FD5486E005C9D7B /* FTestController.m in Sources */,
 				5FFA9FD41FD4EB35005C9D7B /* SecondController.m in Sources */,
 				5FFA9FEC1FD4F95F005C9D7B /* FSecondController.m in Sources */,
