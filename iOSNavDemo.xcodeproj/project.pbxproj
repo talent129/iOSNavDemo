@@ -11,6 +11,10 @@
 		5F64C07F1FD14E3B009F4B08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F64C07E1FD14E3B009F4B08 /* Assets.xcassets */; };
 		5F64C0851FD14E3B009F4B08 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F64C0841FD14E3B009F4B08 /* main.m */; };
 		5F8524FF1FE9002C000DD5D0 /* ThirdTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F8524FE1FE9002C000DD5D0 /* ThirdTestController.m */; };
+		5F8525021FEA3803000DD5D0 /* StarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F8525011FEA3803000DD5D0 /* StarController.m */; };
+		5F8525051FEA38B4000DD5D0 /* StarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F8525041FEA38B4000DD5D0 /* StarView.m */; };
+		5F85250A1FEA5BEC000DD5D0 /* UIView+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F8525091FEA5BEC000DD5D0 /* UIView+Ext.m */; };
+		5F85250D1FEA6306000DD5D0 /* NewsNavTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F85250C1FEA6306000DD5D0 /* NewsNavTestController.m */; };
 		5FCEB7841FDFC2D60018E126 /* ProtocolTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCEB7831FDFC2D60018E126 /* ProtocolTestController.m */; };
 		5FCEB7871FDFDCF10018E126 /* MultiProtocolController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCEB7861FDFDCF10018E126 /* MultiProtocolController.m */; };
 		5FCEB78A1FE10A7A0018E126 /* SuccessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCEB7891FE10A7A0018E126 /* SuccessView.m */; };
@@ -43,6 +47,14 @@
 		5F64C0841FD14E3B009F4B08 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5F8524FD1FE9002C000DD5D0 /* ThirdTestController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdTestController.h; sourceTree = "<group>"; };
 		5F8524FE1FE9002C000DD5D0 /* ThirdTestController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdTestController.m; sourceTree = "<group>"; };
+		5F8525001FEA3803000DD5D0 /* StarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StarController.h; sourceTree = "<group>"; };
+		5F8525011FEA3803000DD5D0 /* StarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StarController.m; sourceTree = "<group>"; };
+		5F8525031FEA38B4000DD5D0 /* StarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StarView.h; sourceTree = "<group>"; };
+		5F8525041FEA38B4000DD5D0 /* StarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StarView.m; sourceTree = "<group>"; };
+		5F8525081FEA5BEC000DD5D0 /* UIView+Ext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Ext.h"; sourceTree = "<group>"; };
+		5F8525091FEA5BEC000DD5D0 /* UIView+Ext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Ext.m"; sourceTree = "<group>"; };
+		5F85250B1FEA6306000DD5D0 /* NewsNavTestController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsNavTestController.h; sourceTree = "<group>"; };
+		5F85250C1FEA6306000DD5D0 /* NewsNavTestController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsNavTestController.m; sourceTree = "<group>"; };
 		5FCEB7821FDFC2D60018E126 /* ProtocolTestController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProtocolTestController.h; sourceTree = "<group>"; };
 		5FCEB7831FDFC2D60018E126 /* ProtocolTestController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProtocolTestController.m; sourceTree = "<group>"; };
 		5FCEB7851FDFDCF10018E126 /* MultiProtocolController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiProtocolController.h; sourceTree = "<group>"; };
@@ -137,6 +149,8 @@
 				5FFAA0071FD69407005C9D7B /* BaseNetwork */,
 				5FFA9FAC1FD4E8A6005C9D7B /* BaseClass */,
 				5FFA9FAB1FD4E893005C9D7B /* Config */,
+				5F8525081FEA5BEC000DD5D0 /* UIView+Ext.h */,
+				5F8525091FEA5BEC000DD5D0 /* UIView+Ext.m */,
 			);
 			path = BaseFrame;
 			sourceTree = "<group>";
@@ -263,6 +277,10 @@
 				5FCEB7921FE26C750018E126 /* LabelController.m */,
 				5F8524FD1FE9002C000DD5D0 /* ThirdTestController.h */,
 				5F8524FE1FE9002C000DD5D0 /* ThirdTestController.m */,
+				5F8525001FEA3803000DD5D0 /* StarController.h */,
+				5F8525011FEA3803000DD5D0 /* StarController.m */,
+				5F85250B1FEA6306000DD5D0 /* NewsNavTestController.h */,
+				5F85250C1FEA6306000DD5D0 /* NewsNavTestController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -281,6 +299,8 @@
 				5FCEB7891FE10A7A0018E126 /* SuccessView.m */,
 				5FCEB7951FE39F000018E126 /* ProtocolTextView.h */,
 				5FCEB7961FE39F000018E126 /* ProtocolTextView.m */,
+				5F8525031FEA38B4000DD5D0 /* StarView.h */,
+				5F8525041FEA38B4000DD5D0 /* StarView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -585,7 +605,9 @@
 				5FFA9FCB1FD4EAC5005C9D7B /* BaseNavController.m in Sources */,
 				5FFA9FB51FD4E9BB005C9D7B /* UIColor+hex.m in Sources */,
 				5FCEB7871FDFDCF10018E126 /* MultiProtocolController.m in Sources */,
+				5F85250D1FEA6306000DD5D0 /* NewsNavTestController.m in Sources */,
 				5FCEB7841FDFC2D60018E126 /* ProtocolTestController.m in Sources */,
+				5F8525051FEA38B4000DD5D0 /* StarView.m in Sources */,
 				5FCEB78D1FE120440018E126 /* SuccessController.m in Sources */,
 				5FFA9FD11FD4EB18005C9D7B /* FirstController.m in Sources */,
 				5FFAA0051FD54E02005C9D7B /* UIImage+ColorCreateImage.m in Sources */,
@@ -598,8 +620,10 @@
 				5FFA9FEC1FD4F95F005C9D7B /* FSecondController.m in Sources */,
 				5FFA9FDE1FD4ED70005C9D7B /* FourthController.m in Sources */,
 				5FFA9FCE1FD4EB0B005C9D7B /* BaseTabBarController.m in Sources */,
+				5F85250A1FEA5BEC000DD5D0 /* UIView+Ext.m in Sources */,
 				5F64C0771FD14E3B009F4B08 /* AppDelegate.m in Sources */,
 				5FCEB7971FE39F000018E126 /* ProtocolTextView.m in Sources */,
+				5F8525021FEA3803000DD5D0 /* StarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,6 +12,8 @@
 #import "SuccessController.h"
 #import "LabelController.h"
 #import "ThirdTestController.h"
+#import "StarController.h"
+#import "NewsNavTestController.h"
 
 @interface ThirdController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -78,7 +80,7 @@
     self.navigationItem.title = @"Third";
     self.navigationController.navigationBar.barStyle = UIStatusBarStyleDefault;
     
-    self.titleArray = @[@"协议", @"多协议", @"动画", @"label设置文字不同颜色、大小, 下划线", @"test"];
+    self.titleArray = @[@"协议", @"多协议", @"动画", @"label设置文字不同颜色、大小, 下划线", @"test", @"评分", @"新闻导航"];
     
     [self setupUI];
     
@@ -119,7 +121,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:iden];
     }
     
-    if (indexPath.row < 5) {
+    if (indexPath.row < 7) {
         cell.textLabel.text = self.titleArray[indexPath.row];
     } else {
         cell.textLabel.text = [NSString stringWithFormat:@"section: %ld-row: %02zd", indexPath.section, indexPath.row];
@@ -166,6 +168,19 @@
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
+        case 5:
+        {
+            StarController *vc = [[StarController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+        case 6:
+        {
+            NewsNavTestController *vc = [[NewsNavTestController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+            
         default:
             break;
     }
