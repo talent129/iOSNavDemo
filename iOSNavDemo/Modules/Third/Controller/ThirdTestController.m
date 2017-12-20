@@ -15,8 +15,13 @@
 
 @property (nonatomic, strong) UIControl *control;
 
-@property (nonatomic, assign) NSInteger tapInter;
-@property (nonatomic, assign) NSInteger btnInter;
+@property (nonatomic, assign) NSInteger currentBtnIndex;
+
+@property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, strong) NSMutableArray *btnArray;
+
+@property (nonatomic, strong) UIView *btnView;
+@property (nonatomic, strong) UIView *signLineView;
 
 @end
 
@@ -50,17 +55,30 @@
 {
     if (!_control) {
         _control = [[UIControl alloc] init];
-        _control.backgroundColor = [UIColor colorWithDecimalRed:0 green:0 blue:0 alpha:0.6];
+        _control.backgroundColor = [UIColor colorWithDecimalRed:0 green:0 blue:0 alpha:0.3];
     }
     return _control;
+}
+
+- (UIView *)signLineView
+{
+    if (!_signLineView) {
+        _signLineView = [[UIView alloc] init];
+        _signLineView.backgroundColor = [UIColor purpleColor];
+    }
+    return _signLineView;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.tapInter = 0;
-    self.btnInter = 0;
+    self.dataArray = [NSMutableArray array];
+    
+    NSArray *btnArr = @[@"btnArr00", @"btnArr01", @"btnArr02"];
+    self.btnArray = [NSMutableArray arrayWithArray:btnArr];
+    
+    self.currentBtnIndex = 0;
     
     [self addButtons];
     
@@ -72,6 +90,7 @@
     UIView *btnView = [[UIView alloc] init];
     btnView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:btnView];
+    self.btnView = btnView;
     [btnView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.and.trailing.equalTo(@0);
         make.top.equalTo(self.mas_topLayoutGuideBottom);
@@ -91,13 +110,53 @@
             make.top.equalTo(@0);
         }];
     }
+    
+    [self.btnView addSubview:self.signLineView];
+    [self.signLineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.equalTo(@0);
+        make.size.mas_equalTo(CGSizeMake(SCREEN_Width/4.0, 2));
+        make.bottom.equalTo(@0);
+    }];
+    
 }
 
 - (void)btnClick:(UIButton *)btn
 {
     NSLog(@"--tag: %ld", (long)btn.tag);
+    self.currentBtnIndex = btn.tag;
+    
+    switch (self.currentBtnIndex) {
+        case 0:
+        {
+            NSArray *btnArr = @[@"btnArr00", @"btnArr01", @"btnArr02"];
+            self.btnArray = [NSMutableArray arrayWithArray:btnArr];
+        }
+            break;
+        case 1:
+        {
+            NSArray *btnArr = @[@"btnArr10", @"btnArr11", @"btnArr12", @"btnArr13"];
+            self.btnArray = [NSMutableArray arrayWithArray:btnArr];
+        }
+            break;
+        case 2:
+        {
+            NSArray *btnArr = @[@"btnArr20", @"btnArr21", @"btnArr22", @"btnArr23", @"btnArr24"];
+            self.btnArray = [NSMutableArray arrayWithArray:btnArr];
+        }
+            break;
+        case 3:
+        {
+            NSArray *btnArr = @[@"btnArr30", @"btnArr31", @"btnArr32", @"btnArr33", @"btnArr34", @"btnArr35"];
+            self.btnArray = [NSMutableArray arrayWithArray:btnArr];
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
     [self.view addSubview:self.control];
-    [self.control mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.control mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.leading.and.trailing.equalTo(@0);
         make.top.equalTo(self.mas_topLayoutGuideBottom).mas_offset(49);
         make.bottom.equalTo(self.mas_bottomLayoutGuideTop);
@@ -105,19 +164,22 @@
     [self.control addTarget:self action:@selector(tapAction) forControlEvents:UIControlEventTouchUpInside];
     
     [self.control addSubview:self.btnTableView];
-    [self.btnTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.btnTableView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(@0);
-        make.size.mas_equalTo(CGSizeMake(SCREEN_Width, 44 * 5));
+        make.size.mas_equalTo(CGSizeMake(SCREEN_Width, 44 * self.btnArray.count));
         make.centerX.equalTo(self.control);
     }];
     
+    [self.btnTableView reloadData];
 }
 
 - (void)tapAction
 {
     NSLog(@"--tap");
-    [self.control removeFromSuperview];
-    self.control = nil;
+    if (_control) {
+        [_control removeFromSuperview];
+        _control = nil;
+    }
 }
 
 - (void)addTableViews
@@ -135,9 +197,9 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if ([tableView isEqual:self.tableView]) {
-        return self.tapInter;
+        return self.dataArray.count;
     }
-    return self.btnInter;
+    return self.btnArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -150,7 +212,7 @@
             
         }
         
-        cell.textLabel.text = [NSString stringWithFormat:@"tableView: %ld", indexPath.row];
+        cell.textLabel.text = self.dataArray[indexPath.row];
         
         return cell;
     }
@@ -162,7 +224,7 @@
         
     }
     
-    btnCell.textLabel.text = [NSString stringWithFormat:@"btnTableView: %ld", indexPath.row];
+    btnCell.textLabel.text = self.btnArray[indexPath.row];
     btnCell.textLabel.textAlignment = NSTextAlignmentCenter;
     
     return btnCell;
@@ -173,16 +235,50 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSLog(@"--didSelect: %@", indexPath);
     
-    if (_control) {
-        [_control removeFromSuperview];
-        _control = nil;
-    }
+    [self tapAction];
     
     if ([tableView isEqual:self.btnTableView]) {
         
-        self.btnInter = indexPath.row;
+        [self.signLineView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.leading.mas_equalTo(SCREEN_Width/4.0 * self.currentBtnIndex);
+            make.bottom.equalTo(@0);
+            make.size.mas_equalTo(CGSizeMake(SCREEN_Width/4.0, 2));
+        }];
         
-        [self.btnTableView reloadData];
+        switch (indexPath.row) {
+            case 0:
+            {
+                self.dataArray = [NSMutableArray array];
+            }
+                break;
+            case 1:
+            {
+                NSArray *dataArr = @[@"dataArr0"];
+                self.dataArray = [NSMutableArray arrayWithArray:dataArr];
+            }
+                break;
+            case 2:
+            {
+                NSArray *dataArr = @[@"dataArr0", @"dataArr1"];
+                self.dataArray = [NSMutableArray arrayWithArray:dataArr];
+            }
+                break;
+            case 3:
+            {
+                NSArray *dataArr = @[@"dataArr0", @"dataArr1", @"dataArr2"];
+                self.dataArray = [NSMutableArray arrayWithArray:dataArr];
+            }
+                break;
+                
+            default:
+            {
+                NSArray *dataArr = @[@"dataArr0", @"dataArr1", @"dataArr2", @"dataArr3", @"dataArr4", @"dataArr5"];
+                self.dataArray = [NSMutableArray arrayWithArray:dataArr];
+            }
+                break;
+        }
+        
+        [self.tableView reloadData];
     }
     
 }
